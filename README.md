@@ -1,6 +1,5 @@
 # Microsoft Teams Beacon Notify
-New beacon notifications in Cobalt Strike for Microsoft Teams
-AggressorScript and python script to notify you via Microsoft Teams when a new beacon checks in.
+New beacon notifications in Cobalt Strike for Microsoft Teams. AggressorScript and python script to notify you via Microsoft Teams when a new beacon checks in.
 
 ## Installation
 1. Setup and get Microsoft Teams webhook. [reference](https://learn.microsoft.com/en-us/microsoftteams/platform/webhooks-and-connectors/how-to/add-incoming-webhook?tabs=dotnet)
