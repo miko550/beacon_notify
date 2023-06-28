@@ -1,0 +1,17 @@
+$path_to_py = "/home/kali/tools/beacon_notify/alert.py";
+
+on beacon_initial {
+    println("Initial Beacon Checkin: " . $1 . " PID: " . beacon_info($1,"pid"));
+    local('$userName $computerName $externalIP $internalIP $arch ');
+
+    $userName = replace(beacon_info($1,"user")," ","_");
+    $computerName = replace(beacon_info($1,"computer")," ","_");
+    $externalIP = replace(beacon_info($1,"external")," ","_");
+    $internalIP = replace(beacon_info($1,"internal")," ","_");
+    $arch = replace(beacon_info($1,"arch")," ","_");
+
+    $cmd = "python3 " . $path_to_py . " --username " . $userName . " --computername " . $computerName . " --externalip " . $externalIP . " --internalip " . $internalIP . " --arch " . $arch;
+
+    println("Sending MS Teams Notification: " . $cmd);
+    exec($cmd);
+}
